@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhinandan Kausthub</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0a0f1c;
+    color: #e5e7eb;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.subtitle {
+    text-align: center;
+    color: #9ca3af;
+    margin-bottom: 30px;
+}
+
+h2 {
+    border-bottom: 1px solid #1f2937;
+    padding-bottom: 10px;
+}
+
+.card {
+    background: #111827;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.project-img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: #38bdf8;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0ea5e9;
+}
+
+.links {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.links a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #6b7280;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Abhinandan Kausthub</h1>
+<p class="subtitle">Aerospace Engineer | Structural Integrity | Fatigue & Fracture Mechanics</p>
+
+<div class="links">
+    <a href="resume.pdf" download><button>Download Resume</button></a>
+    <a href="https://github.com/abhinandankausthub-ux" target="_blank"><button>GitHub</button></a>
+    <a href="https://www.linkedin.com/in/abhinandan-kausthub/" target="_blank"><button>LinkedIn</button></a>
+</div>
+
+<!-- ABOUT -->
+<section>
+<h2>About</h2>
+<div class="card">
+<p>
+MS Aerospace Engineering student at Auburn University specializing in fatigue, fracture mechanics,
+and structural integrity. I develop engineering tools to model crack growth, composite behavior,
+and material failure in real-world systems.
+</p>
+</div>
+</section>
+
+<!-- PROJECT -->
+<section>
+<h2>Fatigue & Fracture Analysis Toolkit</h2>
+
+<div class="card">
+
+<p>
+Developed a Python-based structural integrity toolkit for fatigue life prediction,
+crack growth simulation, and reliability analysis using Paris, Walker, and Forman models.
+</p>
+
+<p style="color:#9ca3af;">
+Covers full fatigue workflow: crack initiation → propagation → failure → reliability.
+</p>
+
+<div class="grid">
+
+<div>
+<img src="crack_growth.png" class="project-img">
+<p>Crack growth evolution showing nonlinear propagation to failure.</p>
+</div>
+
+<div>
+<img src="da_dn.png" class="project-img">
+<p>Fatigue crack growth rate (da/dN vs ΔK) following Paris Law.</p>
+</div>
+
+<div>
+<img src="sn_curve.png" class="project-img">
+<p>S-N fatigue curve illustrating stress-life behavior.</p>
+</div>
+
+<div>
+<img src="strain_life.png" class="project-img">
+<p>Strain-life (Coffin-Manson) capturing elastic and plastic regimes.</p>
+</div>
+
+<div>
+<img src="stress_intensity.png" class="project-img">
+<p>Stress intensity factor vs crack length with critical crack prediction.</p>
+</div>
+
+<div>
+<img src="reliability.png" class="project-img">
+<p>Monte Carlo simulation showing fatigue life distribution.</p>
+</div>
+
+<div>
+<img src="mean_stress.png" class="project-img">
+<p>Mean stress correction using Goodman and Soderberg criteria.</p>
+</div>
+
+<div>
+<img src="material_compare.png" class="project-img">
+<p>Material comparison illustrating fatigue performance differences.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 Abhinandan Kausthub
+</footer>
+
+</div>
+
+</body>
+</html>
