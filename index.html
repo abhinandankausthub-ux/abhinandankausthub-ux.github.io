@@ -5,82 +5,141 @@
 <title>Abhinandan Kausthub</title>
 
 <style>
+
+/* ===== GLOBAL ===== */
 body {
     margin: 0;
-    font-family: Arial;
-    background: radial-gradient(circle, #0a0f1c, #020617);
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at center, #0a0f1c 0%, #020617 100%);
     color: white;
     scroll-behavior: smooth;
 }
 
+/* ===== NAVBAR ===== */
 nav {
     position: sticky;
     top: 0;
-    background: rgba(10,15,28,0.9);
+    background: rgba(10,15,28,0.8);
+    backdrop-filter: blur(12px);
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
     padding: 15px;
+    z-index: 1000;
 }
 
 nav a {
     color: #9ca3af;
     text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
 nav a:hover {
     color: #60a5fa;
 }
 
+/* ===== HERO ===== */
 header {
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px;
+    position: relative;
 }
 
-h1 {
-    font-size: 2.8rem;
+header h1 {
+    font-size: 3rem;
     background: linear-gradient(90deg,#60a5fa,#a78bfa);
     -webkit-background-clip: text;
     color: transparent;
 }
 
+.glow {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(99,102,241,0.4), transparent);
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: blur(90px);
+}
+
+/* ===== BUTTONS ===== */
 button {
-    padding: 10px 20px;
+    padding: 12px 22px;
     margin: 10px;
     background: #111827;
     border: 1px solid #374151;
     color: white;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 button:hover {
     background: #1f2937;
+    box-shadow: 0 0 10px rgba(96,165,250,0.5);
 }
 
+/* ===== SECTIONS ===== */
 section {
-    padding: 50px 10%;
+    padding: 70px 10%;
 }
 
+/* ===== CARDS ===== */
 .card {
-    background: rgba(17,24,39,0.7);
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    background: rgba(17,24,39,0.6);
+    border-radius: 14px;
+    padding: 25px;
+    backdrop-filter: blur(12px);
+    transition: 0.4s;
 }
 
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(96,165,250,0.25);
+}
+
+/* ===== GRID ===== */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     gap: 20px;
 }
 
-.project-img {
+/* ===== PROJECT UI IMAGE ===== */
+.project-main-img {
     width: 100%;
-    border-radius: 8px;
-    cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: 0.3s;
 }
 
+.project-main-img:hover {
+    transform: scale(1.02);
+}
+
+/* ===== RESULT IMAGES ===== */
+.project-img {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.project-img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== DROPDOWN ===== */
+details summary {
+    cursor: pointer;
+    margin: 15px 0;
+    color: #60a5fa;
+    font-weight: 600;
+}
+
+/* ===== MODAL ZOOM ===== */
 .modal {
     display: none;
     position: fixed;
@@ -89,24 +148,35 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0,0,0,0.95);
 }
 
 .modal img {
     display: block;
     margin: auto;
-    max-width: 80%;
-    margin-top: 100px;
+    max-width: 85%;
+    margin-top: 80px;
+    border-radius: 10px;
 }
 
 .modal:target {
     display: block;
 }
+
+/* ===== TITLES ===== */
+h2 {
+    border-bottom: 1px solid #1f2937;
+    padding-bottom: 10px;
+}
+
 </style>
 </head>
 
 <body>
 
+<div class="glow"></div>
+
+<!-- NAV -->
 <nav>
 <a href="#about">About</a>
 <a href="#education">Education</a>
@@ -114,25 +184,29 @@ section {
 <a href="#experience">Experience</a>
 </nav>
 
+<!-- HERO -->
 <header>
 <h1>Abhinandan Kausthub</h1>
-<p>Aerospace Engineer | Fatigue & Fracture | Composites</p>
+<p>Aerospace Engineer | Structural Integrity | Fatigue & Fracture | Composites</p>
 
 <a href="resume.pdf"><button>Download Resume</button></a>
 <a href="https://github.com/abhinandankausthub-ux"><button>GitHub</button></a>
 <a href="https://www.linkedin.com/in/abhinandan-kausthub/"><button>LinkedIn</button></a>
 </header>
 
+<!-- ABOUT -->
 <section id="about">
 <h2>About</h2>
 <div class="card">
 <p>
-MS Aerospace Engineering student specializing in fatigue, fracture mechanics,
-and structural integrity. I build engineering tools for real-world failure prediction.
+MS Aerospace Engineering student at Auburn University specializing in fatigue,
+fracture mechanics, and composite structures. I develop engineering tools for
+predicting failure, crack growth, and structural reliability.
 </p>
 </div>
 </section>
 
+<!-- EDUCATION -->
 <section id="education">
 <h2>Education</h2>
 
@@ -143,22 +217,29 @@ and structural integrity. I build engineering tools for real-world failure predi
 
 <div class="card">
 <p><b>Manipal Institute of Technology</b></p>
-<p>B.Tech Mechanical Engineering</p>
-<p>GPA: 7.3 / 10</p>
+<p>B.Tech Aeronautical/Aerospace Engineering</p>
 </div>
 
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
 <h2>Projects</h2>
 
-<!-- FATIGUE -->
+<div class="grid">
+
+<!-- FATIGUE TOOL -->
 <div class="card">
-<img src="fatigue_ui.png" class="project-img">
-<h3>Fatigue & Fracture Toolkit</h3>
+<img src="fatigue_ui.png" class="project-main-img">
+
+<h3>Fatigue & Fracture Analysis Toolkit</h3>
+<p>
+Simulation tool for crack growth, fatigue life prediction, and reliability analysis
+using Paris, Walker, and Forman models.
+</p>
 
 <details>
-<summary>View Analysis</summary>
+<summary>View Engineering Results</summary>
 
 <div class="grid">
 
@@ -191,13 +272,18 @@ and structural integrity. I build engineering tools for real-world failure predi
 </details>
 </div>
 
-<!-- COMPOSITES -->
+<!-- COMPOSITES TOOL -->
 <div class="card">
-<img src="composite_ui.png" class="project-img">
-<h3>Composite Laminate Tool</h3>
+<img src="composite_ui.png" class="project-main-img">
+
+<h3>Composite Laminate Analysis Toolkit</h3>
+<p>
+CLT-based laminate analysis tool with failure prediction, stress distribution,
+and laminate optimization capabilities.
+</p>
 
 <details>
-<summary>View Analysis</summary>
+<summary>View Engineering Results</summary>
 
 <div class="grid">
 
@@ -221,8 +307,10 @@ and structural integrity. I build engineering tools for real-world failure predi
 </details>
 </div>
 
+</div>
 </section>
 
+<!-- EXPERIENCE -->
 <section id="experience">
 <h2>Experience</h2>
 
