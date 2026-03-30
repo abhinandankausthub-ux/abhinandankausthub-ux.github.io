@@ -93,11 +93,24 @@ section {
     padding: 25px;
     backdrop-filter: blur(12px);
     transition: 0.4s;
+    border: 1px solid rgba(96,165,250,0.1);
 }
 
 .card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 0 25px rgba(96,165,250,0.25);
+    box-shadow: 0 0 30px rgba(96,165,250,0.35);
+}
+.fade {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ===== GRID ===== */
@@ -195,23 +208,56 @@ h2 {
 </header>
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" class="fade">
 <h2>About</h2>
 <div class="card">
 <p>
-MS Aerospace Engineering student at Auburn University specializing in fatigue,
-fracture mechanics, and composite structures. I develop engineering tools for
-predicting failure, crack growth, and structural reliability.
+I am a Master's student in Aerospace Engineering at Auburn University specializing in 
+<strong>structural integrity, fatigue & fracture mechanics, and composite materials</strong>.
+My work focuses on predicting material failure, crack propagation, and reliability of engineering systems 
+under realistic loading conditions.
+</p>
+
+<p>
+I have developed advanced engineering tools that simulate fatigue crack growth using 
+Paris, Walker, and Forman models, as well as composite laminate behavior using Classical 
+Lamination Theory (CLT). These tools integrate analytical modeling, numerical simulation, 
+and data-driven approaches to solve real-world structural problems.
+</p>
+
+<p>
+My technical experience spans <strong>finite element analysis, fatigue life prediction, 
+fracture mechanics, and composite failure modeling</strong>, with hands-on experience in 
+Python, ANSYS, and engineering simulation workflows.
+</p>
+
+<p>
+I am actively seeking opportunities where I can apply my expertise in structural mechanics 
+to solve high-impact engineering challenges in aerospace, energy, and advanced manufacturing industries.
 </p>
 </div>
 </section>
 
 <!-- EDUCATION -->
-<section id="education">
+<section id="education" class="fade">
 <h2>Education</h2>
 
 <div class="card">
 <p><b>Auburn University</b></p>
+<details>
+<summary>View Relevant Coursework</summary>
+
+<ul style="line-height:1.8;">
+<li>✈️ Fatigue & Damage Tolerance</li>
+<li>🧱 Composite Materials</li>
+<li>🧪 Experimental Mechanics</li>
+<li>🧬 Viscoelasticity & Polymer Engineering</li>
+<li>⚛️ Physics of Solids</li>
+<li>🧫 Biomaterials</li>
+<li>🛰️ Lightweight Space Structures</li>
+</ul>
+
+</details>
 <p>MS Aerospace Engineering (2026)</p>
 </div>
 
@@ -223,7 +269,7 @@ predicting failure, crack growth, and structural reliability.
 </section>
 
 <!-- PROJECTS -->
-<section id="projects">
+<section id="projects" class="fade">
 <h2>Projects</h2>
 
 <div class="grid">
@@ -311,17 +357,45 @@ and laminate optimization capabilities.
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience">
+<section id="experience" class="fade">
 <h2>Experience</h2>
 
 <div class="card">
 <p><b>Gowra Aerospace Technologies</b></p>
-<p>Product Engineer Associate</p>
+<p><i>Product Engineer Associate</i></p>
+
+<p>
+Supported aerospace manufacturing programs from raw material processing through final component delivery, 
+ensuring compliance with aerospace quality standards.
+</p>
+
+<p>
+Performed dimensional inspection and tolerance analysis using GD&T to validate structural component geometry 
+and manufacturing tolerances.
+</p>
+
+<p>
+Applied Failure Mode and Effects Analysis (FMEA) and Statistical Process Control (SPC) to identify process risks 
+and improve manufacturing reliability.
+</p>
 </div>
+
 
 <div class="card">
 <p><b>Brahmastra Aerospace</b></p>
-<p>Graduate Engineering Trainee</p>
+<p><i>Graduate Engineering Trainee</i></p>
+
+<p>
+Developed CAD models and engineering drawings using SolidWorks and CATIA for aerospace components.
+</p>
+
+<p>
+Performed structural simulations using ANSYS to evaluate stress distribution and component performance under loading.
+</p>
+
+<p>
+Collaborated with cross-functional teams to support design validation and engineering analysis workflows.
+</p>
 </div>
 
 </section>
