@@ -5,99 +5,186 @@
 <title>Abhinandan Kausthub</title>
 
 <style>
+
+/* ===== GLOBAL ===== */
 body {
-    font-family: Arial;
-    background: #0a0f1c;
-    color: white;
     margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at center, #0a0f1c 0%, #020617 100%);
+    color: white;
+    scroll-behavior: smooth;
 }
 
+/* ===== NAVBAR ===== */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(10,15,28,0.9);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px;
+    z-index: 1000;
+}
+
+nav a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #60a5fa;
+}
+
+/* ===== HERO ===== */
 header {
     text-align: center;
-    padding: 60px 20px;
+    padding: 100px 20px;
 }
 
+header h1 {
+    font-size: 3rem;
+    background: linear-gradient(90deg,#60a5fa,#a78bfa);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.glow {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(99,102,241,0.4), transparent);
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: blur(80px);
+}
+
+/* ===== BUTTONS ===== */
 button {
-    padding: 10px 20px;
+    padding: 12px 20px;
     margin: 10px;
-    background: #1f2937;
+    background: #111827;
+    border: 1px solid #374151;
     color: white;
-    border: none;
-    border-radius: 6px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
+button:hover {
+    background: #1f2937;
+}
+
+/* ===== SECTIONS ===== */
 section {
-    padding: 40px;
+    padding: 60px 10%;
 }
 
+/* ===== CARDS ===== */
+.card {
+    background: rgba(17,24,39,0.7);
+    border-radius: 12px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(96,165,250,0.3);
+}
+
+/* ===== GRID ===== */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     gap: 20px;
 }
 
-.card {
-    background: #111827;
-    padding: 20px;
-    border-radius: 10px;
-}
-
+/* ===== IMAGES ===== */
 .project-img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
-details {
-    margin-top: 15px;
-}
-
-summary {
+/* ===== DROPDOWN ===== */
+details summary {
     cursor: pointer;
-    font-weight: bold;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #60a5fa;
 }
+
+/* ===== TITLES ===== */
+h2 {
+    border-bottom: 1px solid #1f2937;
+    padding-bottom: 10px;
+}
+
 </style>
 </head>
 
 <body>
 
+<div class="glow"></div>
+
+<!-- NAVBAR -->
+<nav>
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#projects">Projects</a>
+<a href="#experience">Experience</a>
+</nav>
+
+<!-- HERO -->
 <header>
 <h1>Abhinandan Kausthub</h1>
-<p>Aerospace Engineer | Fatigue & Fracture | Composites</p>
+<p>Aerospace Engineer | Fatigue | Fracture | Composites</p>
 
 <a href="resume.pdf"><button>Download Resume</button></a>
 <a href="https://github.com/abhinandankausthub-ux"><button>GitHub</button></a>
 <a href="https://www.linkedin.com/in/abhinandan-kausthub/"><button>LinkedIn</button></a>
 </header>
 
-<section>
+<!-- ABOUT -->
+<section id="about">
 <h2>About</h2>
+<div class="card">
 <p>
-MS Aerospace Engineering student specializing in fatigue, fracture mechanics, and structural integrity.
+MS Aerospace Engineering student at Auburn University specializing in fatigue, fracture mechanics,
+and structural integrity. I build engineering tools to simulate crack growth and composite behavior.
 </p>
+</div>
 </section>
 
-<section>
+<!-- EDUCATION -->
+<section id="education">
 <h2>Education</h2>
-<p>
-Auburn University — MS Aerospace Engineering (2026)
-</p>
+<div class="card">
+<p><b>Auburn University</b></p>
+<p>MS Aerospace Engineering (2026)</p>
+<p>Focus: Fatigue, Damage Tolerance, Composite Materials</p>
+</div>
 </section>
 
-<section>
+<!-- PROJECTS -->
+<section id="projects">
 <h2>Projects</h2>
 
-<!-- FATIGUE -->
+<div class="grid">
+
+<!-- FATIGUE TOOL -->
 <div class="card">
 <img src="fatigue_ui.png" class="project-img">
 
 <h3>Fatigue & Fracture Toolkit</h3>
 
 <details>
-<summary>View Details</summary>
+<summary>View Analysis Results</summary>
 
 <div class="grid">
-
 <img src="crack_growth.png" class="project-img">
 <img src="da_dn.png" class="project-img">
 <img src="sn_curve.png" class="project-img">
@@ -106,39 +193,56 @@ Auburn University — MS Aerospace Engineering (2026)
 <img src="reliability.png" class="project-img">
 <img src="mean_stress.png" class="project-img">
 <img src="material_compare.png" class="project-img">
-
 </div>
 
 </details>
+
 </div>
 
-<!-- COMPOSITES -->
+<!-- COMPOSITES TOOL -->
 <div class="card">
 <img src="composite_ui.png" class="project-img">
 
 <h3>Composite Laminate Tool</h3>
 
 <details>
-<summary>View Details</summary>
+<summary>View Analysis Results</summary>
 
 <div class="grid">
-
 <img src="laminate_optimizer.png" class="project-img">
 <img src="ply_sequence.png" class="project-img">
 <img src="stress_distribution.png" class="project-img">
 <img src="progressive_failure.png" class="project-img">
 <img src="abd_matrix.png" class="project-img">
-
 </div>
 
 </details>
+
 </div>
 
+</div>
 </section>
 
-<section>
+<!-- EXPERIENCE -->
+<section id="experience">
 <h2>Experience</h2>
-<p>Gowra Aerospace Technologies — Product Engineer</p>
+
+<div class="card">
+<p><b>Gowra Aerospace Technologies</b></p>
+<p>Product Engineer Associate</p>
+<p>
+Worked on aerospace manufacturing, GD&T analysis, and fatigue-critical structural components.
+</p>
+</div>
+
+<div class="card">
+<p><b>Brahmastra Aerospace</b></p>
+<p>Graduate Engineering Trainee</p>
+<p>
+Performed CAD modeling and structural simulations using ANSYS.
+</p>
+</div>
+
 </section>
 
 </body>
