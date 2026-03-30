@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Abhinandan Kausthub</title>
 
 <style>
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0a0f1c;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #020617;
     color: #e5e7eb;
 }
 
@@ -19,167 +21,285 @@ body {
     padding: 40px 20px;
 }
 
-h1 {
-    text-align: center;
-    font-size: 2.5rem;
+h1, h2, h3 {
+    color: #f9fafb;
 }
 
-.subtitle {
-    text-align: center;
+p {
     color: #9ca3af;
-    margin-bottom: 30px;
 }
 
-h2 {
+/* NAVBAR */
+nav {
+    position: sticky;
+    top: 0;
+    background: #020617;
+    padding: 15px;
     border-bottom: 1px solid #1f2937;
-    padding-bottom: 10px;
+    z-index: 100;
 }
 
+nav a {
+    margin-right: 20px;
+    color: #9ca3af;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* BUTTON */
+button {
+    background: #0f172a;
+    border: 1px solid #334155;
+    color: #e5e7eb;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    border-color: #38bdf8;
+}
+
+/* CARD */
 .card {
-    background: #111827;
+    background: #020617;
+    border: 1px solid #1f2937;
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
 }
 
+/* GRID */
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    margin-top: 20px;
 }
 
+/* IMAGES */
 .project-img {
     width: 100%;
     border-radius: 8px;
+    margin-top: 10px;
 }
 
-button {
-    margin-top: 15px;
-    padding: 10px 15px;
-    background: #38bdf8;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+/* DROPDOWN */
+.project-content {
+    display: none;
+    margin-top: 20px;
 }
 
-button:hover {
-    background: #0ea5e9;
-}
+</style>
 
-.links {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.links a {
-    margin: 0 10px;
-    text-decoration: none;
-}
-
-footer {
-    text-align: center;
-    margin-top: 50px;
-    color: #6b7280;
-}
-
-@media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr;
+<script>
+function toggleProject(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
     }
 }
-</style>
+</script>
+
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+<nav>
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#projects">Projects</a>
+<a href="#experience">Experience</a>
+</nav>
+
 <div class="container">
 
+<!-- HERO -->
 <h1>Abhinandan Kausthub</h1>
-<p class="subtitle">Aerospace Engineer | Structural Integrity | Fatigue & Fracture Mechanics</p>
+<p style="color:#38bdf8;">
+Aerospace Engineer | Structural Integrity | Fatigue & Fracture
+</p>
 
-<div class="links">
-    <a href="resume.pdf" download><button>Download Resume</button></a>
-    <a href="https://github.com/abhinandankausthub-ux" target="_blank"><button>GitHub</button></a>
-    <a href="https://www.linkedin.com/in/abhinandan-kausthub/" target="_blank"><button>LinkedIn</button></a>
-</div>
+<button onclick="window.open('resume.pdf')">Download Resume</button>
+<button onclick="window.open('https://github.com/abhinandankausthub-ux')">GitHub</button>
+<button onclick="window.open('https://www.linkedin.com/in/abhinandan-kausthub/')">LinkedIn</button>
 
 <!-- ABOUT -->
-<section>
+<section id="about">
 <h2>About</h2>
+
 <div class="card">
 <p>
-MS Aerospace Engineering student at Auburn University specializing in fatigue, fracture mechanics,
-and structural integrity. I develop engineering tools to model crack growth, composite behavior,
-and material failure in real-world systems.
+MS Aerospace Engineering student at Auburn University specializing in fatigue,
+fracture mechanics, and structural integrity. I develop engineering tools to model crack growth,
+composite behavior, and material failure in real-world systems.
 </p>
 </div>
 </section>
 
-<!-- PROJECT -->
-<section>
-<h2>Fatigue & Fracture Analysis Toolkit</h2>
+<!-- EDUCATION -->
+<section id="education">
+<h2>Education</h2>
 
 <div class="card">
+<h3>Auburn University</h3>
+<p>MS Aerospace Engineering (2024 – 2026)</p>
+<p>Focus: Structural Integrity, Fatigue & Damage Tolerance</p>
+</div>
 
-<p>
-Developed a Python-based structural integrity toolkit for fatigue life prediction,
-crack growth simulation, and reliability analysis using Paris, Walker, and Forman models.
+<div class="card">
+<h3>Manipal Institute of Technology</h3>
+<p>Bachelor’s in Mechanical Engineering</p>
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projects</h2>
+
+<!-- FATIGUE TOOL -->
+<div class="card">
+
+<h3>Fatigue & Fracture Analysis Toolkit</h3>
+
+<p style="color:#38bdf8;">
+Python-based structural integrity tool for fatigue life prediction and crack growth simulation.
 </p>
 
-<p style="color:#9ca3af;">
-Covers full fatigue workflow: crack initiation → propagation → failure → reliability.
-</p>
+<img src="fatigue_ui.png" class="project-img">
+
+<button onclick="toggleProject('fatigue')">View Technical Details</button>
+
+<div id="fatigue" class="project-content">
 
 <div class="grid">
 
 <div>
 <img src="crack_growth.png" class="project-img">
-<p>Crack growth evolution showing nonlinear propagation to failure.</p>
+<p>Crack length evolution and failure prediction</p>
 </div>
 
 <div>
 <img src="da_dn.png" class="project-img">
-<p>Fatigue crack growth rate (da/dN vs ΔK) following Paris Law.</p>
+<p>Fatigue crack growth rate (Paris Law)</p>
 </div>
 
 <div>
 <img src="sn_curve.png" class="project-img">
-<p>S-N fatigue curve illustrating stress-life behavior.</p>
+<p>S-N fatigue life curve</p>
 </div>
 
 <div>
 <img src="strain_life.png" class="project-img">
-<p>Strain-life (Coffin-Manson) capturing elastic and plastic regimes.</p>
+<p>Coffin-Manson strain-life model</p>
 </div>
 
 <div>
 <img src="stress_intensity.png" class="project-img">
-<p>Stress intensity factor vs crack length with critical crack prediction.</p>
+<p>Stress intensity factor evolution</p>
 </div>
 
 <div>
 <img src="reliability.png" class="project-img">
-<p>Monte Carlo simulation showing fatigue life distribution.</p>
+<p>Monte Carlo fatigue reliability</p>
 </div>
 
 <div>
 <img src="mean_stress.png" class="project-img">
-<p>Mean stress correction using Goodman and Soderberg criteria.</p>
+<p>Mean stress correction (Goodman/Soderberg)</p>
 </div>
 
 <div>
 <img src="material_compare.png" class="project-img">
-<p>Material comparison illustrating fatigue performance differences.</p>
+<p>Material fatigue comparison</p>
 </div>
 
 </div>
 
 </div>
+</div>
+
+<!-- COMPOSITE TOOL -->
+<div class="card">
+
+<h3>Composite Laminate Analysis Toolkit</h3>
+
+<p style="color:#38bdf8;">
+CLT-based laminate analysis with failure prediction and optimization.
+</p>
+
+<img src="composite_ui.png" class="project-img">
+
+<button onclick="toggleProject('composite')">View Technical Details</button>
+
+<div id="composite" class="project-content">
+
+<div class="grid">
+
+<div>
+<img src="laminate_optimizer.png" class="project-img">
+<p>Laminate design optimizer</p>
+</div>
+
+<div>
+<img src="ply_sequence.png" class="project-img">
+<p>Stacking sequence visualization</p>
+</div>
+
+<div>
+<img src="stress_distribution.png" class="project-img">
+<p>Stress distribution through thickness</p>
+</div>
+
+<div>
+<img src="progressive_failure.png" class="project-img">
+<p>Progressive ply failure simulation</p>
+</div>
+
+<div>
+<img src="abd_matrix.png" class="project-img">
+<p>ABD matrices and failure analysis</p>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </section>
 
-<footer>
-© 2026 Abhinandan Kausthub
-</footer>
+<!-- EXPERIENCE -->
+<section id="experience">
+<h2>Experience</h2>
+
+<div class="card">
+<h3>Gowra Aerospace Technologies</h3>
+<p>Product Engineer – Associate</p>
+<p>
+Supported aerospace manufacturing from raw materials to final delivery,
+performed GD&T analysis, and applied FMEA and SPC.
+</p>
+</div>
+
+<div class="card">
+<h3>Brahmastra Aerospace</h3>
+<p>Graduate Engineering Trainee</p>
+<p>
+Worked on CAD modeling and structural simulations using ANSYS,
+including tolerance analysis and design validation.
+</p>
+</div>
+
+</section>
 
 </div>
 
