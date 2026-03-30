@@ -2,275 +2,144 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Abhinandan Kausthub</title>
 
 <style>
-
-/* GLOBAL */
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: radial-gradient(circle at top, #0f172a, #020617 70%);
-    color: #e5e7eb;
-}
-
-/* GLOW BACKGROUND */
-body::before {
-    content: "";
-    position: fixed;
-    top: -200px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(139,92,246,0.4), transparent 70%);
-    filter: blur(120px);
-    z-index: -1;
-}
-
-/* NAVBAR */
-nav {
-    position: sticky;
-    top: 0;
-    backdrop-filter: blur(12px);
-    background: rgba(2,6,23,0.7);
-    padding: 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-nav a {
-    margin-right: 20px;
-    color: #9ca3af;
-    text-decoration: none;
-}
-
-nav a:hover {
-    color: #38bdf8;
-}
-
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-}
-
-.hero h1 {
-    font-size: 48px;
-    background: linear-gradient(90deg, #38bdf8, #a78bfa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero p {
-    font-size: 18px;
-    color: #9ca3af;
-}
-
-/* BUTTON */
-button {
-    background: rgba(15,23,42,0.6);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 10px 18px;
-    border-radius: 8px;
+    font-family: Arial;
+    background: #0a0f1c;
     color: white;
-    cursor: pointer;
-    transition: 0.3s;
+    margin: 0;
 }
 
-button:hover {
-    border-color: #8b5cf6;
-    box-shadow: 0 0 20px rgba(139,92,246,0.5);
+header {
+    text-align: center;
+    padding: 60px 20px;
 }
 
-/* CONTAINER */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
-}
-
-/* CARD */
-.card {
-    background: rgba(15,23,42,0.6);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.05);
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 20px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    border-color: rgba(139,92,246,0.5);
-    box-shadow: 0 0 30px rgba(139,92,246,0.2);
-}
-
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-/* IMAGES */
-.project-img {
-    width: 100%;
-    border-radius: 10px;
-    transition: 0.4s;
-}
-
-.project-img:hover {
-    transform: scale(1.05);
-}
-
-/* DROPDOWN */
-.project-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-}
-
-.project-content.open {
-    max-height: 2000px;
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    background: #1f2937;
+    color: white;
+    border: none;
+    border-radius: 6px;
 }
 
 section {
-    padding-top: 60px;
+    padding: 40px;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #111827;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.project-img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+details {
+    margin-top: 15px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 </style>
-
-<script>
-function toggleProject(id) {
-    const el = document.getElementById(id);
-    el.classList.toggle("open");
-}
-</script>
-
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-<a href="#about">About</a>
-<a href="#education">Education</a>
-<a href="#projects">Projects</a>
-<a href="#experience">Experience</a>
-</nav>
+<header>
+<h1>Abhinandan Kausthub</h1>
+<p>Aerospace Engineer | Fatigue & Fracture | Composites</p>
 
-<!-- HERO -->
-<div class="hero">
-<h1>Engineering Intelligence</h1>
-<p>Structural Integrity • Fatigue & Fracture • Composite Mechanics</p>
-<br>
-<button onclick="window.open('resume.pdf')">Download Resume</button>
-<button onclick="window.open('https://github.com/abhinandankausthub-ux')">GitHub</button>
-<button onclick="window.open('https://www.linkedin.com/in/abhinandan-kausthub/')">LinkedIn</button>
-</div>
+<a href="resume.pdf"><button>Download Resume</button></a>
+<a href="https://github.com/abhinandankausthub-ux"><button>GitHub</button></a>
+<a href="https://www.linkedin.com/in/abhinandan-kausthub/"><button>LinkedIn</button></a>
+</header>
 
-<div class="container">
-
-<!-- ABOUT -->
-<section id="about">
+<section>
 <h2>About</h2>
-<div class="card">
 <p>
-MS Aerospace Engineering student at Auburn University specializing in fatigue,
-fracture mechanics, and structural integrity. I develop engineering tools to model crack growth,
-composite behavior, and material failure.
+MS Aerospace Engineering student specializing in fatigue, fracture mechanics, and structural integrity.
 </p>
-</div>
 </section>
 
-<!-- EDUCATION -->
-<section id="education">
+<section>
 <h2>Education</h2>
-
-<div class="card">
-<h3>Auburn University</h3>
-<p>MS Aerospace Engineering (2024 – 2026)</p>
-</div>
-
-<div class="card">
-<h3>Manipal Institute of Technology</h3>
-<p>Bachelor’s in Mechanical Engineering</p>
-</div>
-
+<p>
+Auburn University — MS Aerospace Engineering (2026)
+</p>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
+<section>
 <h2>Projects</h2>
 
 <!-- FATIGUE -->
 <div class="card">
-<h3>Fatigue & Fracture Analysis Toolkit</h3>
-<p style="color:#38bdf8;">Crack growth simulation, fatigue life prediction, reliability analysis</p>
-
 <img src="fatigue_ui.png" class="project-img">
 
-<button onclick="toggleProject('fatigue')">View Technical Details</button>
+<h3>Fatigue & Fracture Toolkit</h3>
 
-<div id="fatigue" class="project-content">
+<details>
+<summary>View Details</summary>
+
 <div class="grid">
 
-<div><img src="crack_growth.png"><p>Crack growth</p></div>
-<div><img src="da_dn.png"><p>da/dN vs ΔK</p></div>
-<div><img src="sn_curve.png"><p>S-N curve</p></div>
-<div><img src="strain_life.png"><p>Strain-life</p></div>
-<div><img src="stress_intensity.png"><p>Stress intensity</p></div>
-<div><img src="reliability.png"><p>Reliability</p></div>
-<div><img src="mean_stress.png"><p>Mean stress</p></div>
-<div><img src="material_compare.png"><p>Material comparison</p></div>
+<img src="crack_growth.png" class="project-img">
+<img src="da_dn.png" class="project-img">
+<img src="sn_curve.png" class="project-img">
+<img src="strain_life.png" class="project-img">
+<img src="stress_intensity.png" class="project-img">
+<img src="reliability.png" class="project-img">
+<img src="mean_stress.png" class="project-img">
+<img src="material_compare.png" class="project-img">
 
 </div>
-</div>
+
+</details>
 </div>
 
-<!-- COMPOSITE -->
+<!-- COMPOSITES -->
 <div class="card">
-<h3>Composite Laminate Analysis Toolkit</h3>
-<p style="color:#38bdf8;">CLT-based laminate analysis and failure prediction</p>
-
 <img src="composite_ui.png" class="project-img">
 
-<button onclick="toggleProject('composite')">View Technical Details</button>
+<h3>Composite Laminate Tool</h3>
 
-<div id="composite" class="project-content">
+<details>
+<summary>View Details</summary>
+
 <div class="grid">
 
-<div><img src="laminate_optimizer.png"><p>Optimizer</p></div>
-<div><img src="ply_sequence.png"><p>Ply sequence</p></div>
-<div><img src="stress_distribution.png"><p>Stress distribution</p></div>
-<div><img src="progressive_failure.png"><p>Progressive failure</p></div>
-<div><img src="abd_matrix.png"><p>ABD matrices</p></div>
+<img src="laminate_optimizer.png" class="project-img">
+<img src="ply_sequence.png" class="project-img">
+<img src="stress_distribution.png" class="project-img">
+<img src="progressive_failure.png" class="project-img">
+<img src="abd_matrix.png" class="project-img">
 
 </div>
-</div>
+
+</details>
 </div>
 
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
+<section>
 <h2>Experience</h2>
-
-<div class="card">
-<h3>Gowra Aerospace Technologies</h3>
-<p>Product Engineer – Associate</p>
-</div>
-
-<div class="card">
-<h3>Brahmastra Aerospace</h3>
-<p>Graduate Engineering Trainee</p>
-</div>
-
+<p>Gowra Aerospace Technologies — Product Engineer</p>
 </section>
-
-</div>
 
 </body>
 </html>
