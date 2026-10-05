@@ -2,322 +2,217 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Abhinandan Kausthub</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abhinandan Kausthub | Structural Integrity Engineer</title>
+<meta name="description" content="Structural integrity and durability engineer: fatigue and fracture mechanics, damage tolerance, composites. Hyderabad, India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-
-/* ===== GLOBAL ===== */
+:root {
+  --bg1:#0a0f1c; --bg2:#020617; --text:#f3f4f6; --muted:#9ca3af;
+  --blue:#60a5fa; --violet:#a78bfa; --card:rgba(17,24,39,0.6); --line:#1f2937;
+}
+* { box-sizing:border-box; }
+html { background:#020617; scroll-behavior:smooth; scroll-padding-top:70px; }
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: radial-gradient(circle at center, #0a0f1c 0%, #020617 100%);
-    color: white;
-    scroll-behavior: smooth;
+  margin:0; font-family:'Inter','Segoe UI',system-ui,sans-serif; line-height:1.65;
+  background:radial-gradient(circle at center,var(--bg1) 0%,var(--bg2) 100%) fixed; color:var(--text);
 }
+a { color:var(--blue); }
 
-/* ===== NAVBAR ===== */
-nav {
-    position: sticky;
-    top: 0;
-    background: rgba(10,15,28,0.8);
-    backdrop-filter: blur(12px);
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 15px;
-    z-index: 1000;
-}
+/* NAV */
+nav { position:sticky; top:0; z-index:1000; background:rgba(10,15,28,0.8); backdrop-filter:blur(12px);
+  display:flex; justify-content:center; flex-wrap:wrap; gap:8px 30px; padding:14px; border-bottom:1px solid rgba(96,165,250,0.08); }
+nav a { color:var(--muted); text-decoration:none; font-weight:500; transition:0.3s; padding:2px 0; border-bottom:2px solid transparent; }
+nav a:hover, nav a.active { color:var(--blue); border-bottom-color:var(--blue); }
 
-nav a {
-    color: #9ca3af;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
-}
+/* HERO */
+header { text-align:center; padding:90px 20px 60px; position:relative; overflow:hidden; }
+.glow { width:380px; height:380px; background:radial-gradient(circle,rgba(99,102,241,0.45),transparent);
+  position:absolute; top:40px; left:50%; transform:translateX(-50%); filter:blur(90px); z-index:0; pointer-events:none; }
+header > * { position:relative; z-index:1; }
+.wave { display:inline-block; animation:wave 2.4s ease-in-out infinite; transform-origin:70% 70%; }
+@keyframes wave { 0%,60%,100%{transform:rotate(0)} 10%,30%{transform:rotate(14deg)} 20%,40%{transform:rotate(-8deg)} 50%{transform:rotate(10deg)} }
+header h1 { font-size:clamp(2.2rem,6vw,3.6rem); margin:10px 0 6px; font-weight:800; letter-spacing:-0.02em;
+  background:linear-gradient(90deg,var(--blue),var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.tagline { font-size:clamp(1.05rem,2.4vw,1.35rem); font-weight:500; margin:0 0 10px; }
+.sub { color:var(--muted); max-width:760px; margin:0 auto 18px; }
+.badge { display:inline-block; padding:6px 16px; border-radius:999px; font-size:0.9rem; font-weight:500;
+  background:rgba(52,211,153,0.1); border:1px solid rgba(52,211,153,0.4); color:#6ee7b7; margin-bottom:22px; }
+.badge .dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:#34d399; margin-right:8px; animation:pulse 2s infinite; }
+@keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(52,211,153,0.6)} 100%{box-shadow:0 0 0 10px rgba(52,211,153,0)} }
+.btn { display:inline-block; padding:12px 22px; margin:6px; background:#111827; border:1px solid #374151; color:white;
+  border-radius:10px; text-decoration:none; font-weight:500; transition:0.3s; }
+.btn:hover { background:#1f2937; box-shadow:0 0 14px rgba(96,165,250,0.5); transform:translateY(-2px); }
+.btn.primary { background:linear-gradient(90deg,#2563eb,#7c3aed); border-color:transparent; }
 
-nav a:hover {
-    color: #60a5fa;
-}
+/* STATS */
+.stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:14px; max-width:900px; margin:34px auto 0; }
+.stat { background:var(--card); border:1px solid rgba(96,165,250,0.15); border-radius:14px; padding:16px 10px; }
+.stat b { display:block; font-size:1.7rem; font-weight:800; background:linear-gradient(90deg,var(--blue),var(--violet));
+  -webkit-background-clip:text; background-clip:text; color:transparent; }
+.stat span { font-size:0.85rem; color:var(--muted); }
 
-/* ===== HERO ===== */
-header {
-    text-align: center;
-    padding: 100px 20px;
-    position: relative;
-}
+/* SECTIONS */
+section { padding:60px 10%; max-width:1300px; margin:0 auto; }
+h2 { font-size:1.8rem; border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:24px; }
+h3 { margin:6px 0 10px; }
 
-header h1 {
-    font-size: 3rem;
-    background: linear-gradient(90deg,#60a5fa,#a78bfa);
-    -webkit-background-clip: text;
-    color: transparent;
-}
+/* CARDS */
+.card { background:var(--card); border-radius:16px; padding:25px; backdrop-filter:blur(12px);
+  transition:0.4s; border:1px solid rgba(96,165,250,0.1); margin-bottom:20px; }
+.grid > .card { margin-bottom:0; }
+.card:hover { transform:translateY(-6px); box-shadow:0 0 30px rgba(96,165,250,0.35); }
+.fade { opacity:0; transform:translateY(20px); animation:fadeIn 1s forwards; }
+@keyframes fadeIn { to { opacity:1; transform:translateY(0); } }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; }
+.projects { grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr)); }
 
-.glow {
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, rgba(99,102,241,0.4), transparent);
-    position: absolute;
-    top: 120px;
-    left: 50%;
-    transform: translateX(-50%);
-    filter: blur(90px);
-}
+.tags { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }
+.tag { font-size:0.78rem; padding:3px 10px; border-radius:999px; background:rgba(167,139,250,0.12);
+  border:1px solid rgba(167,139,250,0.3); color:#c4b5fd; }
+.links a { margin-right:16px; font-weight:600; text-decoration:none; }
+.links a:hover { text-decoration:underline; }
+.verified { font-size:0.9rem; color:#6ee7b7; background:rgba(52,211,153,0.08); border-left:3px solid #34d399;
+  padding:8px 12px; border-radius:6px; margin:12px 0; }
 
-/* ===== BUTTONS ===== */
-button {
-    padding: 12px 22px;
-    margin: 10px;
-    background: #111827;
-    border: 1px solid #374151;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+.project-main-img { width:100%; border-radius:10px; margin-bottom:15px; transition:0.3s; }
+.project-main-img:hover { transform:scale(1.02); }
+.project-img { width:100%; border-radius:10px; cursor:zoom-in; transition:0.3s; }
+.project-img:hover { transform:scale(1.05); }
+details summary { cursor:pointer; margin:15px 0; color:var(--blue); font-weight:600; }
 
-button:hover {
-    background: #1f2937;
-    box-shadow: 0 0 10px rgba(96,165,250,0.5);
-}
+/* MODAL ZOOM */
+.modal { display:none; position:fixed; z-index:2000; inset:0; background:rgba(0,0,0,0.95); overflow:auto; }
+.modal img { display:block; margin:auto; max-width:90%; margin-top:70px; border-radius:10px; }
+.modal:target { display:block; }
 
-/* ===== SECTIONS ===== */
-section {
-    padding: 70px 10%;
-}
+/* TABLE */
+.table-wrap { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:0.95rem; }
+th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); }
+th { color:var(--blue); font-weight:600; }
+td.good { color:#6ee7b7; font-weight:600; white-space:nowrap; }
+.note { color:var(--muted); font-size:0.88rem; }
+ul.courses { line-height:1.9; }
 
-/* ===== CARDS ===== */
-.card {
-    background: rgba(17,24,39,0.6);
-    border-radius: 14px;
-    padding: 25px;
-    backdrop-filter: blur(12px);
-    transition: 0.4s;
-    border: 1px solid rgba(96,165,250,0.1);
-}
+footer { text-align:center; color:var(--muted); padding:40px 20px 50px; font-size:0.9rem; }
 
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 30px rgba(96,165,250,0.35);
-}
-.fade {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ===== GRID ===== */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 20px;
-}
-
-/* ===== PROJECT UI IMAGE ===== */
-.project-main-img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    transition: 0.3s;
-}
-
-.project-main-img:hover {
-    transform: scale(1.02);
-}
-
-/* ===== RESULT IMAGES ===== */
-.project-img {
-    width: 100%;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.project-img:hover {
-    transform: scale(1.05);
-}
-
-/* ===== DROPDOWN ===== */
-details summary {
-    cursor: pointer;
-    margin: 15px 0;
-    color: #60a5fa;
-    font-weight: 600;
-}
-
-/* ===== MODAL ZOOM ===== */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.95);
-}
-
-.modal img {
-    display: block;
-    margin: auto;
-    max-width: 85%;
-    margin-top: 80px;
-    border-radius: 10px;
-}
-
-.modal:target {
-    display: block;
-}
-
-/* ===== TITLES ===== */
-h2 {
-    border-bottom: 1px solid #1f2937;
-    padding-bottom: 10px;
-}
-
+@media (max-width:600px) { section { padding:40px 6%; } header { padding-top:60px; } }
+@media (prefers-reduced-motion:reduce) { * { animation:none !important; transition:none !important; } .fade { opacity:1; transform:none; } }
 </style>
 </head>
-
 <body>
 
-<div class="glow"></div>
-
-<!-- NAV -->
-<nav>
+<nav id="top">
 <a href="#about">About</a>
-<a href="#education">Education</a>
 <a href="#projects">Projects</a>
+<a href="#validation">Validation</a>
 <a href="#experience">Experience</a>
+<a href="#education">Education</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <!-- HERO -->
 <header>
+<div class="glow"></div>
+<p style="font-size:1.1rem;margin:0;"><span class="wave">👋</span> Hi, I'm</p>
 <h1>Abhinandan Kausthub</h1>
-<p style="color:#9ca3af;">
-MS Aerospace Engineering | Structural Integrity | Fatigue & Fracture | Composite and Metal Analysis | Material Engineering
-</p>
+<p class="tagline">I predict when structures crack ✈️🔩</p>
+<p class="sub">MS Aerospace Engineering | Structural Integrity | Fatigue &amp; Fracture | Composite and Metal Analysis | Material Engineering</p>
+<div class="badge"><span class="dot"></span>📍 Hyderabad, India · open to structural / stress roles in Hyderabad &amp; Bangalore</div>
+<div>
+<a class="btn primary" href="resume.pdf">📄 Download Resume</a>
+<a class="btn" href="https://github.com/abhinandankausthub-ux">💻 GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/abhinandan-kausthub/">🔗 LinkedIn</a>
+</div>
 
-<a href="resume.pdf"><button>Download Resume</button></a>
-<a href="https://github.com/abhinandankausthub-ux"><button>GitHub</button></a>
-<a href="https://www.linkedin.com/in/abhinandan-kausthub/"><button>LinkedIn</button></a>
+<div class="stats">
+<div class="stat"><b>0.05%</b><span>first-ply failure load vs textbook</span></div>
+<div class="stat"><b>0.1%</b><span>crack-growth life vs published example</span></div>
+<div class="stat"><b>38</b><span>automated tests across both toolkits</span></div>
+<div class="stat"><b>2</b><span>full toolkits built in Python</span></div>
+</div>
 </header>
 
 <!-- ABOUT -->
 <section id="about" class="fade">
-<h2>About</h2>
+<h2>🧠 About</h2>
 <div class="card">
 <p>
-I am a Master's student in Aerospace Engineering at Auburn University specializing in 
-<strong>structural integrity, fatigue & fracture mechanics, and composite materials</strong>.
-My work focuses on predicting material failure, crack propagation, and reliability of engineering systems 
+I hold an MS in Aerospace Engineering from Auburn University (2026), specializing in
+<strong>structural integrity, fatigue &amp; fracture mechanics, and composite materials</strong>.
+My work focuses on predicting material failure, crack propagation, and reliability of engineering systems
 under realistic loading conditions.
 </p>
 
 <p>
-I have developed advanced engineering tools that simulate fatigue crack growth using 
-Paris, Walker, and Forman models, as well as composite laminate behavior using Classical 
-Lamination Theory (CLT). These tools integrate analytical modeling, numerical simulation, 
-and data-driven approaches to solve real-world structural problems.
+I build my own engineering tools: fatigue crack growth with the
+Paris, Walker, and Forman models, and composite laminate analysis with Classical
+Lamination Theory (CLT). I check them against published worked examples, because a tool you can't validate is just a pretty plot. 🙂
 </p>
 
 <p>
-My technical experience spans <strong>finite element analysis, fatigue life prediction, 
-fracture mechanics, and composite failure modeling</strong>, with hands-on experience in 
+My technical experience spans <strong>finite element analysis, fatigue life prediction,
+fracture mechanics, and composite failure modeling</strong>, with hands-on experience in
 Python, ANSYS, and engineering simulation workflows.
 </p>
 
 <p>
-I am actively seeking opportunities where I can apply my expertise in structural mechanics 
-to solve high-impact engineering challenges in aerospace, energy, and advanced manufacturing industries.
+I'm based in Hyderabad and looking for opportunities where I can apply structural mechanics
+to high-impact engineering problems in aerospace, energy, and advanced manufacturing.
 </p>
 </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education" class="fade">
-<h2>Education</h2>
-
-<div class="card">
-<p><b>Auburn University</b></p>
-<details>
-<summary>View Relevant Coursework</summary>
-
-<ul style="line-height:1.8;">
-<li>✈️ Fatigue & Damage Tolerance</li>
-<li>🧱 Composite Materials</li>
-<li>🧪 Experimental Mechanics</li>
-<li>🧬 Viscoelasticity & Polymer Engineering</li>
-<li>⚛️ Physics of Solids</li>
-<li>🧫 Biomaterials</li>
-<li>🛰️ Lightweight Space Structures</li>
-<li>🚀 Deformation and Failure of Engineering Materials</li>
-<li>🫗 Fluid Dynamics</li>
-<li>🔬 Phase Transformations in Materials</li>
-</ul>
-
-</details>
-<p>MS Aerospace Engineering (2026)</p>
-</div>
-
-<div class="card">
-<p><b>Manipal Institute of Technology</b></p>
-<p>B.Tech Aeronautical/Aerospace Engineering</p>
-</div>
-
 </section>
 
 <!-- PROJECTS -->
 <section id="projects" class="fade">
-<h2>Projects</h2>
+<h2>🚀 Projects</h2>
 
-<div class="grid">
+<div class="grid projects">
 
 <!-- FATIGUE TOOL -->
 <div class="card">
-<img src="fatigue_ui.png" class="project-main-img">
+<img src="fatigue_ui.png" class="project-main-img" alt="Fatigue and fracture toolkit interface" loading="lazy">
 
-<h3>Fatigue & Fracture Analysis Toolkit</h3>
+<h3>Fatigue &amp; Fracture Analysis Toolkit</h3>
 <p>
-Developed a Python-based structural integrity toolkit for fatigue life prediction,
-crack growth simulation, and probabilistic reliability analysis. Implemented Paris,
-Walker, and Forman models with stress intensity factor evaluation and Monte Carlo simulation.
+A Python structural integrity toolkit for fatigue life prediction,
+crack growth simulation, and probabilistic reliability analysis. Implements Paris,
+Walker, and Forman models with stress intensity evaluation, rainflow counting with Miner's rule,
+mean stress correction, and Monte Carlo simulation.
 </p>
-
+<div class="tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">Rainflow</span><span class="tag">ReportLab</span></div>
+<div class="verified">✅ Paris life within 0.1% of a published example · rainflow matches ASTM E1049 exactly</div>
+<div class="links"><a href="https://github.com/abhinandankausthub-ux/structural-integrity-fatigue-fracture-toolkit">GitHub repo ↗</a></div>
 <details>
 <summary>View Engineering Results</summary>
 
 <div class="grid">
 
-<div><a href="#img1"><img src="crack_growth.png" class="project-img"></a><p>Crack growth evolution.</p></div>
-<div id="img1" class="modal"><a href="#"><img src="crack_growth.png"></a></div>
+<div><a href="#img1"><img src="crack_growth.png" class="project-img" alt="crack growth" loading="lazy"></a><p>Crack growth evolution 📈</p></div>
 
-<div><a href="#img2"><img src="da_dn.png" class="project-img"></a><p>da/dN vs ΔK curve.</p></div>
-<div id="img2" class="modal"><a href="#"><img src="da_dn.png"></a></div>
 
-<div><a href="#img3"><img src="sn_curve.png" class="project-img"></a><p>S-N fatigue curve.</p></div>
-<div id="img3" class="modal"><a href="#"><img src="sn_curve.png"></a></div>
+<div><a href="#img2"><img src="da_dn.png" class="project-img" alt="da dn" loading="lazy"></a><p>da/dN vs ΔK curve.</p></div>
 
-<div><a href="#img4"><img src="strain_life.png" class="project-img"></a><p>Strain-life model.</p></div>
-<div id="img4" class="modal"><a href="#"><img src="strain_life.png"></a></div>
 
-<div><a href="#img5"><img src="stress_intensity.png" class="project-img"></a><p>Stress intensity factor.</p></div>
-<div id="img5" class="modal"><a href="#"><img src="stress_intensity.png"></a></div>
+<div><a href="#img3"><img src="sn_curve.png" class="project-img" alt="sn curve" loading="lazy"></a><p>S-N fatigue curve.</p></div>
 
-<div><a href="#img6"><img src="reliability.png" class="project-img"></a><p>Monte Carlo reliability.</p></div>
-<div id="img6" class="modal"><a href="#"><img src="reliability.png"></a></div>
 
-<div><a href="#img7"><img src="mean_stress.png" class="project-img"></a><p>Mean stress correction.</p></div>
-<div id="img7" class="modal"><a href="#"><img src="mean_stress.png"></a></div>
+<div><a href="#img4"><img src="strain_life.png" class="project-img" alt="strain life" loading="lazy"></a><p>Strain-life model.</p></div>
 
-<div><a href="#img8"><img src="material_compare.png" class="project-img"></a><p>Material comparison.</p></div>
-<div id="img8" class="modal"><a href="#"><img src="material_compare.png"></a></div>
+
+<div><a href="#img5"><img src="stress_intensity.png" class="project-img" alt="stress intensity" loading="lazy"></a><p>Stress intensity factor.</p></div>
+
+
+<div><a href="#img6"><img src="reliability.png" class="project-img" alt="reliability" loading="lazy"></a><p>Monte Carlo reliability.</p></div>
+
+
+<div><a href="#img7"><img src="mean_stress.png" class="project-img" alt="mean stress" loading="lazy"></a><p>Mean stress (Haigh) diagram</p></div>
+
+
+<div><a href="#img8"><img src="material_compare.png" class="project-img" alt="material compare" loading="lazy"></a><p>Material comparison.</p></div>
+
 
 </div>
 
@@ -326,34 +221,36 @@ Walker, and Forman models with stress intensity factor evaluation and Monte Carl
 
 <!-- COMPOSITES TOOL -->
 <div class="card">
-<img src="composite_ui.png" class="project-main-img">
+<img src="composite_ui.png" class="project-main-img" alt="Composite laminate toolkit interface" loading="lazy">
 
 <h3>Composite Laminate Analysis Toolkit</h3>
 <p>
-Developed a Classical Lamination Theory (CLT) based composite analysis tool for
-predicting laminate response, ply-level stresses, and failure using Tsai-Hill and Tsai-Wu criteria,
-with progressive failure simulation and optimization capabilities.
+A Classical Lamination Theory (CLT) tool for
+predicting laminate response, ply-level stresses, and failure using Maximum Stress, Tsai-Hill and Tsai-Wu criteria,
+with progressive failure simulation, layup optimization, and PDF reports.
 </p>
-
+<div class="tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">NumPy</span><span class="tag">CLT</span><span class="tag">ReportLab</span></div>
+<div class="verified">✅ Stiffness within 0.5% and first-ply failure within 0.05% of Kaw's textbook examples</div>
+<div class="links"><a href="https://github.com/abhinandankausthub-ux/composite-laminate-analysis-toolkit">GitHub repo ↗</a></div>
 <details>
 <summary>View Engineering Results</summary>
 
 <div class="grid">
 
-<div><a href="#img9"><img src="laminate_optimizer.png" class="project-img"></a><p>Laminate optimization.</p></div>
-<div id="img9" class="modal"><a href="#"><img src="laminate_optimizer.png"></a></div>
+<div><a href="#img9"><img src="laminate_optimizer.png" class="project-img" alt="laminate optimizer" loading="lazy"></a><p>Laminate optimization.</p></div>
 
-<div><a href="#img10"><img src="ply_sequence.png" class="project-img"></a><p>Ply stacking sequence.</p></div>
-<div id="img10" class="modal"><a href="#"><img src="ply_sequence.png"></a></div>
 
-<div><a href="#img11"><img src="stress_distribution.png" class="project-img"></a><p>Stress distribution.</p></div>
-<div id="img11" class="modal"><a href="#"><img src="stress_distribution.png"></a></div>
+<div><a href="#img10"><img src="ply_sequence.png" class="project-img" alt="ply sequence" loading="lazy"></a><p>Ply stacking sequence.</p></div>
 
-<div><a href="#img12"><img src="progressive_failure.png" class="project-img"></a><p>Progressive failure.</p></div>
-<div id="img12" class="modal"><a href="#"><img src="progressive_failure.png"></a></div>
 
-<div><a href="#img13"><img src="abd_matrix.png" class="project-img"></a><p>ABD matrices.</p></div>
-<div id="img13" class="modal"><a href="#"><img src="abd_matrix.png"></a></div>
+<div><a href="#img11"><img src="stress_distribution.png" class="project-img" alt="stress distribution" loading="lazy"></a><p>Stress distribution.</p></div>
+
+
+<div><a href="#img12"><img src="progressive_failure.png" class="project-img" alt="progressive failure" loading="lazy"></a><p>Progressive failure: 2.9× first ply, 5.0× ultimate 💥</p></div>
+
+
+<div><a href="#img13"><img src="abd_matrix.png" class="project-img" alt="abd matrix" loading="lazy"></a><p>ABD matrices.</p></div>
+
 
 </div>
 
@@ -362,35 +259,35 @@ with progressive failure simulation and optimization capabilities.
 
 <!-- HYPERSONIC CFD PROJECT -->
 <div class="card">
-<img src="hypersonic_cover.png" class="project-main-img">
+<img src="hypersonic_cover.png" class="project-main-img" alt="Hypersonic flow cover" loading="lazy">
 
-<h3>Hypersonic Flow Modeling & Turbine Blade Analysis</h3>
+<h3>Hypersonic Flow Modeling &amp; Turbine Blade Analysis 🔥</h3>
 
 <p>
-Performed high-fidelity CFD simulation of a missile in hypersonic flow (Mach 10) using ANSYS Fluent, solving Navier-Stokes equations with k-ω turbulence model. 
-Evaluated aerodynamic performance through lift/drag analysis, pressure distribution, velocity-Mach contours, and shock wave formation. 
-Additionally conducted structural and modal analysis of a high-pressure turbine (HPT) blade under rotational and aerodynamic loading.
+CFD simulation of a missile in hypersonic flow (Mach 10, 90 km altitude, 5° angle of attack) using ANSYS Fluent, solving Navier-Stokes equations with the k-ω turbulence model.
+Evaluated lift/drag, pressure distribution, velocity-Mach contours, and shock formation.
+Also ran modal analysis of a titanium high-pressure turbine blade under rotational and aerodynamic loading.
 </p>
-
+<div class="tags"><span class="tag">ANSYS Fluent</span><span class="tag">CFD</span><span class="tag">k-ω</span><span class="tag">Modal analysis</span></div>
 <details>
 <summary>View Engineering Results</summary>
 
 <div class="grid">
 
-<div><a href="#img14"><img src="pressure_contour.png" class="project-img"></a><p>Pressure contour at Mach 10.</p></div>
-<div id="img14" class="modal"><a href="#"><img src="pressure_contour.png"></a></div>
+<div><a href="#img14"><img src="pressure_contour.png" class="project-img" alt="pressure contour" loading="lazy"></a><p>Pressure contour at Mach 10.</p></div>
 
-<div><a href="#img15"><img src="velocity_mach.png" class="project-img"></a><p>Velocity-Mach distribution.</p></div>
-<div id="img15" class="modal"><a href="#"><img src="velocity_mach.png"></a></div>
 
-<div><a href="#img16"><img src="shock_cone.png" class="project-img"></a><p>Shock cone formation.</p></div>
-<div id="img16" class="modal"><a href="#"><img src="shock_cone.png"></a></div>
+<div><a href="#img15"><img src="velocity_mach.png" class="project-img" alt="velocity mach" loading="lazy"></a><p>Velocity-Mach distribution.</p></div>
 
-<div><a href="#img17"><img src="cl_cd.png" class="project-img"></a><p>Lift and drag coefficients.</p></div>
-<div id="img17" class="modal"><a href="#"><img src="cl_cd.png"></a></div>
 
-<div><a href="#img18"><img src="path_lines.png" class="project-img"></a><p>Path Lines.</p></div>
-<div id="img18" class="modal"><a href="#"><img src="path_lines.png"></a></div>
+<div><a href="#img16"><img src="shock_cone.png" class="project-img" alt="shock cone" loading="lazy"></a><p>Shock cone formation.</p></div>
+
+
+<div><a href="#img17"><img src="cl_cd.png" class="project-img" alt="cl cd" loading="lazy"></a><p>Lift and drag coefficients.</p></div>
+
+
+<div><a href="#img18"><img src="path_lines.png" class="project-img" alt="path lines" loading="lazy"></a><p>Path Lines.</p></div>
+
 
 </div>
 
@@ -399,35 +296,35 @@ Additionally conducted structural and modal analysis of a high-pressure turbine 
 
 <!-- MR ELASTOMER PROJECT -->
 <div class="card">
-<img src="mre_cover.png" class="project-main-img">
+<img src="mre_cover.png" class="project-main-img" alt="MR elastomer cover" loading="lazy">
 
-<h3>MR Elastomer Aging & Vibration Analysis</h3>
+<h3>MR Elastomer Aging &amp; Vibration Analysis 🧲</h3>
 
 <p>
-Investigated the influence of environmental aging on the damping properties of silicone-based magnetorheological elastomers (MREs). 
-Conducted free vibration experiments and analyzed system response to extract damping ratio and natural frequency. 
-Studied the effect of humidity exposure on viscoelastic behavior, demonstrating increased damping and reduced stiffness over time.
+Investigated how humidity aging changes damping in silicone-based magnetorheological elastomers (27 vol.% carbonyl iron).
+Free-vibration tests with LabVIEW data acquisition and logarithmic-decrement analysis showed a
+<strong>15–21% increase in damping ratio</strong> and up to a <strong>20% drop in natural frequency</strong> after 2 weeks of exposure.
 </p>
-
+<div class="tags"><span class="tag">MATLAB</span><span class="tag">ANSYS</span><span class="tag">LabVIEW</span><span class="tag">Experimental mechanics</span></div>
 <details>
 <summary>View Experimental Results</summary>
 
 <div class="grid">
 
-<div><a href="#img19"><img src="mre_setup.png" class="project-img"></a><p>Experimental setup with accelerometer.</p></div>
-<div id="img19" class="modal"><a href="#"><img src="mre_setup.png"></a></div>
+<div><a href="#img19"><img src="mre_setup.png" class="project-img" alt="mre setup" loading="lazy"></a><p>Experimental setup with accelerometer.</p></div>
 
-<div><a href="#img20"><img src="mre_samples.png" class="project-img"></a><p>Sample preparation (silicone + CIP).</p></div>
-<div id="img20" class="modal"><a href="#"><img src="mre_samples.png"></a></div>
 
-<div><a href="#img21"><img src="damping_graph.png" class="project-img"></a><p>Damping ratio variation.</p></div>
-<div id="img21" class="modal"><a href="#"><img src="damping_graph.png"></a></div>
+<div><a href="#img20"><img src="mre_samples.png" class="project-img" alt="mre samples" loading="lazy"></a><p>Sample preparation (silicone + CIP).</p></div>
 
-<div><a href="#img22"><img src="frequency_graph.png" class="project-img"></a><p>Natural frequency response.</p></div>
-<div id="img22" class="modal"><a href="#"><img src="frequency_graph.png"></a></div>
 
-<div><a href="#img23"><img src="comparison.png" class="project-img"></a><p>Week 0 vs Week 2 comparison.</p></div>
-<div id="img23" class="modal"><a href="#"><img src="comparison.png"></a></div>
+<div><a href="#img21"><img src="damping_graph.png" class="project-img" alt="damping graph" loading="lazy"></a><p>Damping ratio variation.</p></div>
+
+
+<div><a href="#img22"><img src="frequency_graph.png" class="project-img" alt="frequency graph" loading="lazy"></a><p>Natural frequency response.</p></div>
+
+
+<div><a href="#img23"><img src="comparison.png" class="project-img" alt="comparison" loading="lazy"></a><p>Week 0 vs Week 2 comparison.</p></div>
+
 
 </div>
 
@@ -437,49 +334,122 @@ Studied the effect of humidity exposure on viscoelastic behavior, demonstrating 
 </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience" class="fade">
-<h2>Experience</h2>
-
+<!-- VALIDATION -->
+<section id="validation" class="fade">
+<h2>🧪 How I validated the toolkits</h2>
 <div class="card">
-<p><b>Gowra Aerospace Technologies</b></p>
-<p><i>Product Engineer Associate</i></p>
-
-<p>
-Supported aerospace manufacturing programs from raw material processing through final component delivery, 
-ensuring compliance with aerospace quality standards.
-</p>
-
-<p>
-Performed dimensional inspection and tolerance analysis using GD&T to validate structural component geometry 
-and manufacturing tolerances.
-</p>
-
-<p>
-Applied Failure Mode and Effects Analysis (FMEA) and Statistical Process Control (SPC) to identify process risks 
-and improve manufacturing reliability.
-</p>
+<p>I ran both toolkits on published worked examples and compared the numbers. Finding the mismatches was the useful part: it caught real bugs in my first versions.</p>
+<div class="table-wrap">
+<table>
+<tr><th>Check</th><th>Published</th><th>My toolkit</th><th>Difference</th></tr>
+<tr><td>Laminate stiffness, [0/60/-60] A11 (Kaw)</td><td>1.146e9 N/m</td><td>1.150e9 N/m</td><td class="good">+0.4%</td></tr>
+<tr><td>Ex of [0/90/0] (Kaw)</td><td>124.5 GPa</td><td>125.1 GPa</td><td class="good">+0.5%</td></tr>
+<tr><td>First-ply failure load, Tsai-Wu (Kaw)</td><td>7.277e6 N/m</td><td>7.274e6 N/m</td><td class="good">−0.05%</td></tr>
+<tr><td>Last-ply failure load, max stress (Kaw)</td><td>1.5e7 N/m</td><td>1.5000e7 N/m</td><td class="good">0%</td></tr>
+<tr><td>Paris-law life, SAE 1020 edge crack, 1 → 68 mm (Glinka)</td><td>128,792 cycles</td><td>128,697 cycles</td><td class="good">−0.07%</td></tr>
+<tr><td>Rainflow counting, ASTM E1049 example</td><td>5 cycle ranges, counts 0.5 / 1 / 0.5 / 1.5 / 0.5</td><td>identical</td><td class="good">0</td></tr>
+</table>
 </div>
-
-
-<div class="card">
-<p><b>Brahmastra Aerospace</b></p>
-<p><i>Graduate Engineering Trainee</i></p>
-
-<p>
-Developed CAD models and engineering drawings using SolidWorks and CATIA for aerospace components.
-</p>
-
-<p>
-Performed structural simulations using ANSYS to evaluate stress distribution and component performance under loading.
-</p>
-
-<p>
-Collaborated with cross-functional teams to support design validation and engineering analysis workflows.
-</p>
+<p class="note">Not yet checked against published data: Walker and Forman models, mean-stress corrections, Monte Carlo reliability. Material constants are representative values.</p>
 </div>
-
 </section>
 
+<!-- EXPERIENCE -->
+<section id="experience" class="fade">
+<h2>🛠️ Experience</h2>
+
+<div class="card">
+<p><b>Gowra Aerospace Technologies</b> · <i>Product Engineer Associate (Internship, May–Jul 2022)</i></p>
+<ul>
+<li>Supported aerospace manufacturing programs from raw material processing through final component delivery, ensuring compliance with aerospace quality standards.</li>
+<li>Performed dimensional inspection and tolerance analysis using GD&amp;T to validate structural component geometry.</li>
+<li>Applied FMEA and Statistical Process Control (SPC) to identify process risks and improve manufacturing reliability.</li>
+</ul>
+</div>
+
+<div class="card">
+<p><b>Brahmastra Aerospace</b> · <i>Graduate Engineering Trainee (Internship, Jul–Sep 2023)</i></p>
+<ul>
+<li>Designed aerospace components in SolidWorks and CATIA (parametric and surface modeling) and produced GD&amp;T drawings.</li>
+<li>Ran structural FEA in ANSYS to evaluate stress distribution and component performance under loading.</li>
+<li>Collaborated with cross-functional teams to support design validation and engineering analysis.</li>
+</ul>
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="fade">
+<h2>🎓 Education</h2>
+
+<div class="card">
+<p><b>Auburn University</b> · MS Aerospace Engineering (2026)</p>
+<details>
+<summary>View Relevant Coursework</summary>
+<ul class="courses">
+<li>✈️ Fatigue &amp; Damage Tolerance</li>
+<li>🧱 Composite Materials</li>
+<li>🧪 Experimental Mechanics</li>
+<li>🧬 Viscoelasticity &amp; Polymer Engineering</li>
+<li>⚛️ Physics of Solids</li>
+<li>🧫 Biomaterials</li>
+<li>🛰️ Lightweight Space Structures</li>
+<li>🚀 Deformation and Failure of Engineering Materials</li>
+<li>🫗 Fluid Dynamics</li>
+<li>🔬 Phase Transformations in Materials</li>
+</ul>
+</details>
+</div>
+
+<div class="card">
+<p><b>Manipal Institute of Technology</b> · B.Tech Aeronautical Engineering (2023)</p>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fade">
+<h2>📬 Let's talk</h2>
+<div class="card" style="text-align:center;">
+<p>Looking for a structures, durability or stress analysis engineer in Hyderabad or Bangalore? I'd love to hear from you.</p>
+<a class="btn primary" href="mailto:Abhinandan.kausthub@gmail.com">✉️ Abhinandan.kausthub@gmail.com</a>
+<a class="btn" href="https://www.linkedin.com/in/abhinandan-kausthub/">🔗 LinkedIn</a>
+<a class="btn" href="https://github.com/abhinandankausthub-ux">💻 GitHub</a>
+</div>
+</section>
+
+<footer>Built by hand · Abhinandan Kausthub · Hyderabad 🇮🇳</footer>
+
+<!-- IMAGE ZOOM (kept outside the cards so they can cover the whole page) -->
+<div id="img1" class="modal"><a href="#"><img src="crack_growth.png" alt="crack growth" loading="lazy"></a></div>
+<div id="img2" class="modal"><a href="#"><img src="da_dn.png" alt="da dn" loading="lazy"></a></div>
+<div id="img3" class="modal"><a href="#"><img src="sn_curve.png" alt="sn curve" loading="lazy"></a></div>
+<div id="img4" class="modal"><a href="#"><img src="strain_life.png" alt="strain life" loading="lazy"></a></div>
+<div id="img5" class="modal"><a href="#"><img src="stress_intensity.png" alt="stress intensity" loading="lazy"></a></div>
+<div id="img6" class="modal"><a href="#"><img src="reliability.png" alt="reliability" loading="lazy"></a></div>
+<div id="img7" class="modal"><a href="#"><img src="mean_stress.png" alt="mean stress" loading="lazy"></a></div>
+<div id="img8" class="modal"><a href="#"><img src="material_compare.png" alt="material compare" loading="lazy"></a></div>
+<div id="img9" class="modal"><a href="#"><img src="laminate_optimizer.png" alt="laminate optimizer" loading="lazy"></a></div>
+<div id="img10" class="modal"><a href="#"><img src="ply_sequence.png" alt="ply sequence" loading="lazy"></a></div>
+<div id="img11" class="modal"><a href="#"><img src="stress_distribution.png" alt="stress distribution" loading="lazy"></a></div>
+<div id="img12" class="modal"><a href="#"><img src="progressive_failure.png" alt="progressive failure" loading="lazy"></a></div>
+<div id="img13" class="modal"><a href="#"><img src="abd_matrix.png" alt="abd matrix" loading="lazy"></a></div>
+<div id="img14" class="modal"><a href="#"><img src="pressure_contour.png" alt="pressure contour" loading="lazy"></a></div>
+<div id="img15" class="modal"><a href="#"><img src="velocity_mach.png" alt="velocity mach" loading="lazy"></a></div>
+<div id="img16" class="modal"><a href="#"><img src="shock_cone.png" alt="shock cone" loading="lazy"></a></div>
+<div id="img17" class="modal"><a href="#"><img src="cl_cd.png" alt="cl cd" loading="lazy"></a></div>
+<div id="img18" class="modal"><a href="#"><img src="path_lines.png" alt="path lines" loading="lazy"></a></div>
+<div id="img19" class="modal"><a href="#"><img src="mre_setup.png" alt="mre setup" loading="lazy"></a></div>
+<div id="img20" class="modal"><a href="#"><img src="mre_samples.png" alt="mre samples" loading="lazy"></a></div>
+<div id="img21" class="modal"><a href="#"><img src="damping_graph.png" alt="damping graph" loading="lazy"></a></div>
+<div id="img22" class="modal"><a href="#"><img src="frequency_graph.png" alt="frequency graph" loading="lazy"></a></div>
+<div id="img23" class="modal"><a href="#"><img src="comparison.png" alt="comparison" loading="lazy"></a></div>
+
+<script>
+// highlight the nav link of the section on screen
+const links=[...document.querySelectorAll('nav a')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting) links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));
+}),{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('section[id]').forEach(s=>io.observe(s));
+</script>
 </body>
 </html>
